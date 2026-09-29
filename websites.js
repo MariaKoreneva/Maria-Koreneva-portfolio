@@ -1,5 +1,12 @@
 (() => {
   const demoResumeUrl = 'https://mariakoreneva.github.io/Demo-resume/';
+  // Все будущие внешние проекты портфолио также должны открываться через demo-viewer.html
+  // с передачей URL проекта, страницы возврата и текущего языка.
+  const demoViewerHref = (projectUrl, lang) => {
+    const back = lang === 'en' ? 'websites.html?lang=en' : 'websites.html';
+    const query = new URLSearchParams({ url: projectUrl, back, lang: lang === 'en' ? 'en' : 'ru' });
+    return `demo-viewer.html?${query.toString()}`;
+  };
   const screenshots = [
     { ru: 'DemoResume.jpg', en: 'DemoResumeENG.jpg' },
     { ru: 'Sportup.jpg', en: 'Sportup.jpg' },
@@ -136,7 +143,7 @@
       const button = card.querySelector('[data-button]');
       if (button) {
         button.textContent = project.button;
-        button.href = demoResumeUrl;
+        button.href = demoViewerHref(demoResumeUrl, lang);
       }
 
       const note = card.querySelector('[data-note]');

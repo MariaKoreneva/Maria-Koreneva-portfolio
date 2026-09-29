@@ -105,6 +105,21 @@ const translations = {
   }
 };
 
+const externalDemos = {
+  game: 'https://mariakoreneva.github.io/igra-uspey-do-18/',
+  calculator: 'https://mariakoreneva.github.io/Psychological-calculator/',
+  survey: 'https://mariakoreneva.github.io/survey-research-platform/',
+  surveyAdmin: 'https://mariakoreneva.github.io/survey-research-platform/admin/'
+};
+
+// Все будущие внешние проекты портфолио также должны открываться через demo-viewer.html
+// с передачей URL проекта, страницы возврата и текущего языка.
+function demoViewerHref(projectUrl, lang) {
+  const back = lang === 'en' ? 'online-tools.html?lang=en' : 'online-tools.html';
+  const query = new URLSearchParams({ url: projectUrl, back, lang: lang === 'en' ? 'en' : 'ru' });
+  return `demo-viewer.html?${query.toString()}`;
+}
+
 function setLanguage(language, updateUrl = true) {
   const lang = language === "en" ? "en" : "ru";
   const content = translations[lang];
@@ -132,13 +147,19 @@ function setLanguage(language, updateUrl = true) {
     });
 
     if (index < 2) {
-      card.querySelector("[data-button]").textContent = project.button;
+      const button = card.querySelector("[data-button]");
+      button.textContent = project.button;
+      button.href = demoViewerHref(index === 0 ? externalDemos.game : externalDemos.calculator, lang);
     } else {
       card.querySelectorAll("[data-label]").forEach((label, labelIndex) => {
         label.textContent = project.labels[labelIndex];
       });
       card.querySelectorAll("[data-button]").forEach((button, buttonIndex) => {
         button.textContent = project.buttons[buttonIndex];
+        button.href = demoViewerHref(
+          buttonIndex === 0 ? externalDemos.survey : externalDemos.surveyAdmin,
+          lang
+        );
       });
       card.querySelector("[data-demo-title]").textContent = project.demoTitle;
       card.querySelector("[data-demo-text]").textContent = project.demoText;

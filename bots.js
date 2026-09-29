@@ -1,5 +1,12 @@
 (() => {
   const botUrl = 'https://mariakoreneva.github.io/Web-bot-manager/';
+  // Все будущие внешние проекты портфолио также должны открываться через demo-viewer.html
+  // с передачей URL проекта, страницы возврата и текущего языка.
+  const demoViewerHref = (projectUrl, lang) => {
+    const back = lang === 'en' ? 'bots.html?lang=en' : 'bots.html';
+    const query = new URLSearchParams({ url: projectUrl, back, lang: lang === 'en' ? 'en' : 'ru' });
+    return `demo-viewer.html?${query.toString()}`;
+  };
   const trainerImage = 'Manager trainer bot.jpg';
 
   const translations = {
@@ -171,7 +178,7 @@
       if (index === 0) {
         const externalButton = section.querySelector('[data-external-button]');
         externalButton.textContent = item.externalButton;
-        externalButton.href = botUrl;
+        externalButton.href = demoViewerHref(botUrl, lang);
         section.querySelector('[data-value]').textContent = item.value;
       } else {
         section.querySelector('[data-case-desc]').textContent = item.caseDesc;
