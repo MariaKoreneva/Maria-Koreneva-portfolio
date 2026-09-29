@@ -128,6 +128,14 @@
     document.querySelector('[data-title]').textContent = t.title;
     document.querySelector('[data-intro]').textContent = t.intro;
 
+    const demoButton = document.querySelector('[data-project="0"] [data-external-demo]');
+    if (demoButton) {
+      demoButton.textContent = t.projects[0].button;
+      demoButton.href = demoViewerHref(demoResumeUrl, lang);
+      demoButton.removeAttribute('target');
+      demoButton.removeAttribute('rel');
+    }
+
     document.querySelectorAll('[data-project]').forEach((card, index) => {
       const project = t.projects[index];
       card.querySelector('[data-project-title]').textContent = project.title;
@@ -139,12 +147,6 @@
       const screenshot = card.querySelector('[data-screenshot]');
       screenshot.src = screenshots[index][lang];
       screenshot.alt = project.screenshotAlt;
-
-      const button = card.querySelector('[data-button]');
-      if (button) {
-        button.textContent = project.button;
-        button.href = demoViewerHref(demoResumeUrl, lang);
-      }
 
       const note = card.querySelector('[data-note]');
       if (note) {

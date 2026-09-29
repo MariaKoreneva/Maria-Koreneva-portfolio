@@ -12,20 +12,16 @@
     html,body{height:100%}
     body{font-family:Manrope,sans-serif;background:#080b10;color:#f5f1ec;overflow:hidden}
     .viewer{display:flex;flex-direction:column;height:100%;height:100dvh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-    .toolbar{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:10px 12px;border-bottom:1px solid rgba(225,170,145,.35);background:#0d1118}
-    .back{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:#f5f1ec;text-decoration:none;font-size:14px;font-weight:700;line-height:1.3;flex:1 1 auto;min-width:0}
+    .toolbar{flex:0 0 auto;display:flex;align-items:center;min-height:52px;padding:10px 12px;border-bottom:1px solid rgba(225,170,145,.35);background:#0d1118}
+    .back{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:#f5f1ec;text-decoration:none;font-size:14px;font-weight:700;line-height:1.3}
     .back:hover{color:#E1AA91}
-    .open-separate{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border:1px solid #E1AA91;border-radius:10px;background:rgba(225,170,145,.12);color:#E1AA91;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap}
-    .open-separate:hover{background:rgba(225,170,145,.22)}
     .frame-wrap{flex:1 1 auto;min-height:0;position:relative;background:#05070a}
     .frame-wrap iframe{display:block;width:100%;height:100%;border:0;background:#fff}
     .fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;padding:24px;text-align:center;color:#aeb4bf;font-size:15px;line-height:1.6}
     .fallback.visible{display:flex;flex-direction:column;gap:16px}
-    .fallback a{color:#E1AA91;font-weight:700}
     @media(max-width:430px){
-      .toolbar{align-items:stretch;flex-wrap:wrap;padding:8px 10px}
+      .toolbar{padding:8px 10px}
       .back{font-size:13px}
-      .open-separate{width:100%;font-size:12px;padding:0 12px}
     }
   </style>
 </head>
@@ -33,13 +29,11 @@
   <div class="viewer">
     <header class="toolbar">
       <a class="back" id="back-link" href="index.html#projects">← Вернуться к примерам решений</a>
-      <a class="open-separate" id="open-separate" href="#" target="_blank" rel="noopener noreferrer">Открыть отдельно ↗</a>
     </header>
     <div class="frame-wrap">
       <iframe id="demo-frame" title="Демо-проект" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
       <div class="fallback" id="fallback">
         <p id="fallback-text">Не удалось загрузить демо в окне просмотра.</p>
-        <a id="fallback-open" href="#" target="_blank" rel="noopener noreferrer">Открыть проект отдельно ↗</a>
       </div>
     </div>
   </div>
@@ -49,18 +43,14 @@
         ru: {
           title: 'Демо-проект - Мария Коренева',
           back: '← Вернуться к примерам решений',
-          openSeparate: 'Открыть отдельно ↗',
           frameTitle: 'Демо-проект',
-          fallback: 'Не удалось загрузить демо в окне просмотра.',
-          fallbackOpen: 'Открыть проект отдельно ↗'
+          fallback: 'Не удалось загрузить демо в окне просмотра.'
         },
         en: {
           title: 'Demo project - Maria Koreneva',
           back: '← Back to Solutions',
-          openSeparate: 'Open separately ↗',
           frameTitle: 'Demo project',
-          fallback: 'The demo could not be loaded in the viewer.',
-          fallbackOpen: 'Open project separately ↗'
+          fallback: 'The demo could not be loaded in the viewer.'
         }
       };
 
@@ -85,31 +75,24 @@
       }
 
       const backLink = document.getElementById('back-link');
-      const openSeparate = document.getElementById('open-separate');
       const frame = document.getElementById('demo-frame');
       const fallback = document.getElementById('fallback');
       const fallbackText = document.getElementById('fallback-text');
-      const fallbackOpen = document.getElementById('fallback-open');
 
       document.documentElement.lang = lang;
       document.title = t.title;
       backLink.textContent = t.back;
-      openSeparate.textContent = t.openSeparate;
       frame.title = t.frameTitle;
       fallbackText.textContent = t.fallback;
-      fallbackOpen.textContent = t.fallbackOpen;
 
       if (!isAllowedDemoUrl(demoUrl) || !isSafeBackPath(back)) {
         backLink.href = lang === 'en' ? 'index.html?lang=en#projects' : 'index.html#projects';
         frame.hidden = true;
         fallback.classList.add('visible');
-        fallbackOpen.href = isAllowedDemoUrl(demoUrl) ? demoUrl : backLink.href;
         return;
       }
 
       backLink.href = back;
-      openSeparate.href = demoUrl;
-      fallbackOpen.href = demoUrl;
       frame.src = demoUrl;
 
       let loaded = false;
