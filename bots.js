@@ -17,14 +17,17 @@
         {
           caseTitle: 'Веб-бот менеджер-консультант',
           screenshotAlt: 'Веб-бот менеджер-консультант',
-          infoTitle: 'Что берет на себя:',
+          infoTitle: 'Что дает бизнесу или эксперту:',
           benefits: [
-            'Знакомит пользователя с услугами и направлениями работы',
-            'Помогает выбрать нужную информацию с помощью кнопок',
-            'Ведет пользователя по разным сценариям',
-            'Отвечает на типовые вопросы',
-            'Переводит пользователя к следующему действию - обращению к специалисту'
+            'Отвечает на типовые вопросы клиентов без участия специалиста',
+            'Помогает клиенту самостоятельно найти нужную услугу или информацию',
+            'Знакомит с услугами и направлениями работы',
+            'Ведет клиента к следующему действию - обращению к специалисту',
+            'Снижает время на повторяющееся общение с клиентами',
+            'Может работать с обращениями, когда специалист занят или не на связи'
           ],
+          value:
+            'Экономит время специалиста и снижает расходы на часть повторяющихся задач по общению с клиентами.',
           externalButton: 'Посмотреть бота →'
         },
         {
@@ -32,7 +35,7 @@
           caseDesc:
             'Интерактивный тренажер для обучения и оценки сотрудников на основе смоделированных рабочих ситуаций.',
           screenshotAlt: 'Интерактивный бот-тренажер',
-          infoTitle: 'Что дает бизнесу:',
+          infoTitle: 'Что дает бизнесу или эксперту:',
           benefits: [
             'Позволяет обучать сотрудников на практических рабочих ситуациях',
             'Дает возможность отрабатывать решения без риска для реальной работы',
@@ -68,14 +71,17 @@
         {
           caseTitle: 'Web Bot Manager and Consultant',
           screenshotAlt: 'Web Bot Manager and Consultant',
-          infoTitle: 'What it can handle:',
+          infoTitle: 'What it offers businesses and professionals:',
           benefits: [
-            'Introduces users to services and areas of work',
-            'Helps users find the information they need through button-based navigation',
-            'Guides users through different workflows',
-            'Answers frequently asked questions',
-            'Guides users toward the next step - contacting the specialist'
+            'Answers frequently asked client questions without requiring the specialist\'s involvement',
+            'Helps clients find the service or information they need on their own',
+            'Introduces clients to services and areas of work',
+            'Guides clients toward the next step - contacting the specialist',
+            'Reduces time spent on repetitive client communication',
+            'Can handle client inquiries when the specialist is busy or unavailable'
           ],
+          value:
+            'Saves the specialist time and reduces the cost of repetitive client communication tasks.',
           externalButton: 'View the bot →'
         },
         {
@@ -83,7 +89,7 @@
           caseDesc:
             'An interactive bot for training and evaluating employees based on simulated workplace situations.',
           screenshotAlt: 'Interactive Training Bot',
-          infoTitle: 'What it offers businesses:',
+          infoTitle: 'What it offers businesses and professionals:',
           benefits: [
             'Helps train employees through practical workplace situations',
             'Allows employees to practice decisions without risk to real work processes',
@@ -166,6 +172,7 @@
         const externalButton = section.querySelector('[data-external-button]');
         externalButton.textContent = item.externalButton;
         externalButton.href = botUrl;
+        section.querySelector('[data-value]').textContent = item.value;
       } else {
         section.querySelector('[data-case-desc]').textContent = item.caseDesc;
         section.querySelector('[data-value]').textContent = item.value;

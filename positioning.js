@@ -9,14 +9,14 @@ const translations = {
     caseTitle: "Позиционирование и оформление социальных сетей",
     profilesTitle: "Примеры оформления профилей",
     storiesTitle: "Примеры визуального оформления контента",
-    featuresTitle: "Что можно сделать:",
+    featuresTitle: "Что получает специалист или компания:",
     features: [
-      "Выделить сильные стороны и особенности специалиста или компании",
-      "Показать, почему стоит обратиться именно к вам",
-      "Подстроить оформление социальных сетей под целевую аудиторию",
-      "Создать визуальное оформление для публикаций и сторис",
-      "Определить, о чем говорить с аудиторией в социальных сетях",
-      "Подготовить основу для дальнейшего ведения социальных сетей"
+      "Четкое позиционирование с акцентом на сильные стороны и особенности",
+      "Понятное представление ценности услуг для потенциальных клиентов",
+      "Оформление социальных сетей с учетом целевой аудитории",
+      "Единый визуальный стиль публикаций и сторис",
+      "Понимание, о чем и как говорить с аудиторией",
+      "Основа для системного ведения и продвижения социальных сетей"
     ],
     telegramAlt: "Пример оформления профиля Telegram",
     maxAlt: "Пример оформления профиля MAX",
@@ -32,14 +32,14 @@ const translations = {
     caseTitle: "Positioning and Social Media Presentation",
     profilesTitle: "Profile presentation examples",
     storiesTitle: "Content design examples",
-    featuresTitle: "What can be done:",
+    featuresTitle: "What the specialist or company gets:",
     features: [
-      "Highlight the strengths and distinctive features of a specialist or company",
-      "Show why potential clients should choose you",
-      "Adapt social media presentation to the target audience",
-      "Create visual designs for posts and stories",
-      "Define what to communicate to your audience on social media",
-      "Create a foundation for ongoing social media management"
+      "Clear positioning focused on key strengths and distinctive features",
+      "A clear presentation of the value of services to potential clients",
+      "Social media presentation tailored to the target audience",
+      "A consistent visual style for posts and stories",
+      "A clear understanding of what to communicate and how",
+      "A foundation for consistent social media management and promotion"
     ],
     telegramAlt: "Telegram profile presentation example",
     maxAlt: "MAX profile presentation example",
