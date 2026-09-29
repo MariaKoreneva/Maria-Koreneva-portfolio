@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Боты - Мария Коренева</title>
+  <link rel="stylesheet" href="bots.css">
+  <script src="bots.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <div class="glow-one"></div>
+    <div class="glow-two"></div>
+    <div class="container">
+      <div class="topbar">
+        <a class="back" href="index.html#projects" data-back>← Вернуться к примерам решений</a>
+        <div class="lang" aria-label="Language">
+          <button type="button" data-lang="ru">RU</button>
+          <span>|</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <div class="kicker" data-kicker>БОТЫ</div>
+      <h1 data-title>Боты для автоматизации общения и рабочих процессов</h1>
+      <p class="intro" data-intro>Боты могут брать на себя часть повторяющихся действий, помогать пользователю находить нужную информацию и вести его по заданному сценарию.</p>
+
+      <section class="case" data-case="0">
+        <div class="case-number">01</div>
+        <h2 class="case-title" data-case-title>Веб-бот менеджер-консультант</h2>
+        <div class="case-grid">
+          <div class="preview">
+            <img src="WebBot.jpg" alt="Веб-бот менеджер-консультант" data-screenshot-alt>
+          </div>
+          <div class="info">
+            <h3 data-info-title>Что берет на себя:</h3>
+            <ul data-benefits></ul>
+            <a class="button" href="https://mariakoreneva.github.io/Web-bot-manager/" target="_blank" rel="noopener noreferrer" data-external-button>Посмотреть бота →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="case case--trainer" data-case="1">
+        <div class="case-number">02</div>
+        <h2 class="case-title" data-case-title>Интерактивный бот-тренажер</h2>
+        <p class="case-desc" data-case-desc>Интерактивный тренажер для обучения и оценки сотрудников на основе смоделированных рабочих ситуаций.</p>
+        <div class="case-grid">
+          <div class="preview">
+            <img src="Manager trainer bot.jpg" alt="Интерактивный бот-тренажер" data-screenshot-alt>
+          </div>
+          <div class="info">
+            <h3 data-info-title>Что дает бизнесу:</h3>
+            <ul data-benefits></ul>
+            <p class="value" data-value>Экономит время руководителя, наставника или корпоративного тренера и снижает расходы на повторяющиеся этапы обучения сотрудников.</p>
+            <div class="how-it-works">
+              <h4 data-how-title>Как работает бот:</h4>
+              <ul class="how-steps" data-how-steps></ul>
+            </div>
+            <button type="button" class="button" data-video-open>▶ Посмотреть бота</button>
+          </div>
+        </div>
+      </section>
+
+      <a class="back bottom-back" href="index.html#projects" data-back>← Вернуться к примерам решений</a>
+    </div>
+  </main>
+
+  <div class="video-modal" data-video-modal hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Демонстрация работы бота">
+    <button type="button" class="video-modal-close" data-video-close>× Закрыть</button>
+    <video class="demo-video" src="Manager trainer bot.MP4" preload="metadata" playsinline data-demo-video></video>
+  </div>
+</body>
+</html>

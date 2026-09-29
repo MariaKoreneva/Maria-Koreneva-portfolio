@@ -1,0 +1,59 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090b10;color:#f4f0eb;font-family:"Manrope",sans-serif}
+body.modal-open{overflow:hidden}
+.page{position:relative;overflow-x:hidden;min-height:100vh;padding:58px 24px 90px}
+.glow{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(circle,rgba(25,66,130,.22) 0%,rgba(12,30,65,.10) 42%,transparent 72%);pointer-events:none}
+.container{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:70px}
+.back{display:inline-flex;align-items:center;gap:8px;color:#aeb2bb;text-decoration:none;font-size:14px;transition:.2s ease}
+.back:hover{color:#e1aa91}
+.bottom-back{margin-top:64px}
+.lang{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.lang button{min-width:36px;min-height:44px;padding:0;border:0;background:transparent;color:#879197;font:700 13px "Manrope",sans-serif;cursor:pointer}
+.lang button[aria-pressed="true"]{color:#e1aa91}
+.lang span{color:#566168}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.16em;color:#e1aa91;margin-bottom:18px}
+h1{margin:0;max-width:850px;font-size:clamp(38px,5vw,66px);line-height:1.06;letter-spacing:-.035em;font-weight:600}
+.intro{max-width:820px;margin:26px 0 64px;color:#aeb2bb;font-size:18px;line-height:1.75}
+.card{position:relative;padding:34px;border:1px solid rgba(225,170,145,.48);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));box-shadow:0 24px 80px rgba(0,0,0,.22)}
+.card + .card{margin-top:64px}
+.number{position:absolute;top:-16px;left:28px;padding:4px 11px;background:#090b10;color:#e1aa91;font-size:13px;font-weight:700;letter-spacing:.14em}
+.card-title{margin:4px 0 30px;font-size:34px;line-height:1.2;font-weight:600;letter-spacing:-.025em}
+.card-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:50px;align-items:start}
+.left-column{min-width:0}
+.media{display:flex;align-items:center;justify-content:center;padding:10px;border:1px solid rgba(225,170,145,.28);border-radius:13px;background:#0d1016;overflow:hidden}
+.media img{display:block;width:100%;height:auto;border-radius:8px}
+.note{margin:18px 4px 0;color:#aeb2bb;font-size:15px;line-height:1.65}
+.right-column{padding:3px 6px 0 0}
+.list-title{margin:0 0 19px;font-size:17px;font-weight:700;color:#f4f0eb}
+ul{list-style:none;padding:0;margin:0 0 32px}
+li{position:relative;margin:0 0 15px;padding-left:23px;color:#b6bac2;font-size:15px;line-height:1.6}
+li::before{content:"";position:absolute;left:0;top:.68em;width:7px;height:7px;border-radius:50%;background:#e1aa91}
+.demo-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border:1px solid #e1aa91;border-radius:9px;background:#e1aa91;color:#111318;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.demo-button:hover{filter:brightness(1.05)}
+.video-modal[hidden]{display:none}
+.video-modal{position:fixed;z-index:1000;inset:0;display:flex;align-items:center;justify-content:center;padding:72px 24px 24px;background:rgba(3,5,9,.9)}
+.video-modal-content{position:relative;display:flex;align-items:center;justify-content:center;max-width:85vw;max-height:85vh}
+.demo-video{display:block;width:auto;height:auto;max-width:85vw;max-height:85vh;object-fit:contain;background:#090b10}
+.video-modal-close{position:absolute;z-index:2;right:0;bottom:calc(100% + 12px);min-height:44px;padding:8px 16px;border:1px solid #e1aa91;border-radius:8px;background:#e1aa91;color:#111318;font:700 14px "Manrope",sans-serif;cursor:pointer}
+.video-modal-close:hover{filter:brightness(1.06)}
+@media(max-width:900px){
+  .page{padding:38px 18px 65px}
+  .topbar{align-items:flex-start;flex-direction:column;gap:14px;margin-bottom:52px}
+  .intro{margin-bottom:46px;font-size:16px}
+  .card{padding:28px 24px}
+  .card + .card{margin-top:52px}
+  .card-title{font-size:30px;margin-bottom:25px}
+  .card-grid{grid-template-columns:1fr;gap:32px}
+  .right-column{padding:0}
+}
+@media(max-width:520px){
+  h1{font-size:36px}
+  .card{padding:25px 16px 20px}
+  .card-title{font-size:27px}
+  .media{padding:6px}
+  .demo-button{width:100%}
+  .video-modal{padding:68px 12px 18px}
+  .video-modal-content,.demo-video{max-width:calc(100vw - 24px);max-height:80vh}
+}

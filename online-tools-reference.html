@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Онлайн-инструменты - Мария Коренева</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;background:#090b10;color:#f5f2ee;line-height:1.6;min-height:100vh}
+.page{position:relative;overflow-x:hidden;min-height:100vh;padding:60px 24px 80px}
+.page::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:rgba(24,66,155,.18);filter:blur(120px);top:-330px;right:-200px;pointer-events:none}
+.container{position:relative;z-index:1;max-width:1280px;margin:0 auto}
+.back{display:inline-flex;align-items:center;color:#c9ccd3;text-decoration:none;font-size:16px;transition:.25s}
+.back:hover{color:#E1AA91}
+.top-back{margin-bottom:55px}
+.kicker{font-size:15px;letter-spacing:.18em;color:#E1AA91;font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(40px,5vw,66px);line-height:1.05;max-width:950px;font-weight:700;letter-spacing:-.035em}
+.intro{max-width:950px;margin-top:22px;color:#b9bdc6;font-size:19px}
+.project-card{margin-top:55px;border:1px solid #E1AA91;border-radius:22px;background:rgba(15,18,25,.72);padding:38px}
+.project-head{display:grid;grid-template-columns:70px 1fr;gap:22px;align-items:start;margin-bottom:34px}
+.number{font-size:15px;letter-spacing:.18em;color:#E1AA91;font-weight:700;padding-top:7px}
+h2{font-size:clamp(30px,3vw,42px);line-height:1.12;letter-spacing:-.025em;margin-bottom:12px}
+.description{color:#c7cad1;font-size:19px;max-width:900px}
+.project-body{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);gap:38px;align-items:center}
+.screenshot-wrap{width:100%;border:1px solid rgba(225,170,145,.45);border-radius:14px;padding:8px;background:#0d1016}
+.screenshot{display:block;width:100%;height:auto;border-radius:8px}
+.project-details{display:flex;flex-direction:column;justify-content:center;width:100%}
+.benefits-title{font-size:19px;font-weight:700;color:#f5f2ee;margin-bottom:15px}
+.benefits{display:grid;gap:13px}
+.benefit{display:flex;gap:11px;color:#c1c4cc;font-size:17px;line-height:1.5}
+.benefit::before{content:"•";color:#E1AA91;font-weight:700}
+.site-button{display:flex;width:100%;align-items:center;justify-content:center;min-height:52px;margin-top:28px;padding:0 25px;background:#E1AA91;color:#16171b;text-decoration:none;border-radius:10px;font-size:17px;font-weight:750;text-align:center;transition:transform .2s ease,filter .2s ease}
+.site-button:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.screenshots-vertical{display:grid;grid-template-columns:1fr;gap:22px}
+.screenshot-item{min-width:0}
+.screenshot-label{color:#9fa3ad;font-size:14px;margin-top:8px;text-align:center}
+.buttons-two{display:grid;gap:12px;margin-top:28px}
+.buttons-two .site-button{margin-top:0}
+.demo-access{margin-top:18px;padding:15px 17px;border:1px solid rgba(225,170,145,.25);border-radius:10px;color:#aeb2bb;font-size:14px}
+.demo-access strong{color:#f5f2ee}
+.bottom-nav{margin-top:65px;padding-top:35px;border-top:1px solid rgba(255,255,255,.08)}
+@media(max-width:800px){
+.page{padding:38px 18px 60px}
+.top-back{margin-bottom:45px}
+.kicker{font-size:13px}
+.intro{font-size:17px}
+.project-card{margin-top:42px;padding:24px 18px}
+.project-head{grid-template-columns:1fr;gap:8px;margin-bottom:26px}
+.number{padding-top:0}
+h2{font-size:31px}
+.description{font-size:17px}
+.project-body{grid-template-columns:1fr;gap:26px}
+.screenshot-wrap{padding:6px}
+.benefits-title{font-size:18px}
+.benefit{font-size:16px}
+.site-button{font-size:16px;min-height:50px;margin-top:24px}
+.buttons-two{margin-top:24px}
+.buttons-two .site-button{margin-top:0}
+.bottom-nav{margin-top:50px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="container">
+<a class="back top-back" href="index.html#projects">← Вернуться к примерам решений</a>
+<div class="kicker">ОНЛАЙН-ИНСТРУМЕНТЫ</div>
+<h1>Интерактивные решения для бизнеса и продвижения</h1>
+<p class="intro">Онлайн-инструменты помогают привлечь внимание к продукту или услуге, вовлечь аудиторию, выделиться среди конкурентов и получить данные для дальнейшего продвижения.</p>
+<article class="project-card">
+<div class="project-head">
+<div class="number">01</div>
+<div>
+<h2>Интерактивная игра «Успей до 18»</h2>
+<p class="description">Интерактивная игра, которая в игровом формате показывает, сколько времени можно сэкономить на рабочих задачах с помощью ИИ.</p>
+</div>
+</div>
+<div class="project-body">
+<div class="screenshot-wrap">
+<img class="screenshot" src="Uspeydo18.jpg" alt="Интерактивная игра Успей до 18">
+</div>
+<div class="project-details">
+<div class="benefits-title">Для чего можно использовать:</div>
+<div class="benefits">
+<div class="benefit">Привлечь внимание к продукту или услуге необычным форматом</div>
+<div class="benefit">Вовлечь аудиторию во взаимодействие</div>
+<div class="benefit">Наглядно показать ценность продукта вместо обычного рассказа о нем</div>
+<div class="benefit">Использовать как интерактивный лид-магнит</div>
+</div>
+<a class="site-button" href="https://mariakoreneva.github.io/igra-uspey-do-18/" target="_blank" rel="noopener noreferrer">Попробовать игру →</a>
+</div>
+</div>
+</article>
+<article class="project-card">
+<div class="project-head">
+<div class="number">02</div>
+<div>
+<h2>Калькулятор времени психолога</h2>
+<p class="description">Интерактивный калькулятор, который помогает специалисту увидеть, сколько времени уходит на рабочие задачи и какую его часть можно освободить с помощью ИИ.</p>
+</div>
+</div>
+<div class="project-body">
+<div class="screenshot-wrap">
+<img class="screenshot" src="Psy calculator.jpg" alt="Калькулятор времени психолога">
+</div>
+<div class="project-details">
+<div class="benefits-title">Для чего можно использовать:</div>
+<div class="benefits">
+<div class="benefit">Использовать как полезный лид-магнит для потенциальных клиентов</div>
+<div class="benefit">Помочь человеку самостоятельно увидеть проблему и получить персональный результат</div>
+<div class="benefit">Наглядно показать пользу предлагаемого продукта или услуги</div>
+<div class="benefit">Подвести аудиторию к следующему шагу - консультации, заявке или продукту</div>
+</div>
+<a class="site-button" href="https://mariakoreneva.github.io/Psychological-calculator/" target="_blank" rel="noopener noreferrer">Открыть калькулятор →</a>
+</div>
+</div>
+</article>
+<article class="project-card">
+<div class="project-head">
+<div class="number">03</div>
+<div>
+<h2>Опрос с админ-панелью</h2>
+<p class="description">Онлайн-опрос с отдельной админ-панелью для сбора и просмотра ответов аудитории.</p>
+</div>
+</div>
+<div class="project-body">
+<div class="screenshots-vertical">
+<div class="screenshot-item">
+<div class="screenshot-wrap">
+<img class="screenshot" src="DemoSurvey.jpg" alt="Страница онлайн-опроса">
+</div>
+<div class="screenshot-label">Опрос для пользователя</div>
+</div>
+<div class="screenshot-item">
+<div class="screenshot-wrap">
+<img class="screenshot" src="DemoSurveyAdmin.jpg" alt="Админ-панель опроса">
+</div>
+<div class="screenshot-label">Админ-панель</div>
+</div>
+</div>
+<div class="project-details">
+<div class="benefits-title">Для чего можно использовать:</div>
+<div class="benefits">
+<div class="benefit">Изучать потребности, запросы и интересы целевой аудитории</div>
+<div class="benefit">Проводить кастдевы и собирать обратную связь</div>
+<div class="benefit">Проверять гипотезы перед созданием или запуском продукта</div>
+<div class="benefit">Собирать результаты в одном месте для последующего анализа</div>
+</div>
+<div class="buttons-two">
+<a class="site-button" href="https://mariakoreneva.github.io/survey-research-platform/" target="_blank" rel="noopener noreferrer">Пройти опрос →</a>
+<a class="site-button" href="https://mariakoreneva.github.io/survey-research-platform/admin/" target="_blank" rel="noopener noreferrer">Открыть админ-панель →</a>
+</div>
+<div class="demo-access"><strong>Демо-доступ к админ-панели</strong><br>Логин и пароль добавим после настройки демонстрационного доступа.</div>
+</div>
+</div>
+</article>
+<div class="bottom-nav">
+<a class="back" href="index.html#projects">← Вернуться к примерам решений</a>
+</div>
+</div>
+</main>
+</body>
+</html>

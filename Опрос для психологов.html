@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Опрос для психологов — Мария Коренева</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#0d1114;
+  --surface:#12181c;
+  --surface2:#182126;
+  --surface3:#202a30;
+  --text:#f4f2ed;
+  --muted:#8f999f;
+  --line:#29343a;
+  --accent:#e1aa91;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 82% 8%,rgba(225,170,145,.10),transparent 25%),
+    radial-gradient(circle at 12% 45%,rgba(55,96,170,.13),transparent 28%),
+    var(--bg);
+  color:var(--text);
+  font-family:Manrope,Arial,sans-serif;
+}
+button,input,textarea{font:inherit}
+a{color:inherit}
+.wrap{width:min(920px,calc(100% - 40px));margin:auto}
+
+/* Header */
+.top{
+  position:sticky;
+  z-index:20;
+  top:14px;
+  width:min(920px,calc(100% - 28px));
+  height:62px;
+  margin:14px auto 0;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  background:rgba(13,17,20,.86);
+  backdrop-filter:blur(18px);
+  box-shadow:0 16px 45px rgba(0,0,0,.22);
+}
+.brand{
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:-.025em;
+}
+.top-label{
+  margin-left:auto;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Intro */
+.hero{
+  padding:92px 0 44px;
+}
+.kicker{
+  margin-bottom:16px;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+h1,h2,p{margin-top:0}
+h1{
+  max-width:850px;
+  margin-bottom:24px;
+  font-size:clamp(43px,7vw,76px);
+  line-height:.98;
+  letter-spacing:-.052em;
+  font-weight:700;
+}
+.accent{color:var(--accent)}
+.lead{
+  max-width:720px;
+  margin-bottom:24px;
+  color:#c0c6c9;
+  font-family:Inter,Arial,sans-serif;
+  font-size:20px;
+  line-height:1.65;
+}
+.gift{
+  display:inline-flex;
+  max-width:760px;
+  padding:19px 21px;
+  border:1px solid #c06c52;
+  border-radius:16px;
+  background:#a95842;
+  color:#fff7f2;
+  font-size:18px;
+  font-weight:700;
+  line-height:1.5;
+}
+.time{
+  margin:18px 0 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Form */
+.form{
+  padding:22px 0 90px;
+}
+.question{
+  margin:16px 0;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:rgba(18,24,28,.94);
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
+}
+.qnum{
+  margin-bottom:13px;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.question h2{
+  margin-bottom:12px;
+  font-size:clamp(23px,3vw,31px);
+  line-height:1.18;
+  letter-spacing:-.035em;
+}
+.hint{
+  margin-bottom:18px;
+  color:var(--muted);
+  font-family:Inter,Arial,sans-serif;
+  font-size:14px;
+  line-height:1.55;
+}
+.field{
+  width:100%;
+  min-height:54px;
+  padding:15px 17px;
+  color:var(--text);
+  background:var(--surface2);
+  border:1px solid #344149;
+  border-radius:15px;
+  outline:none;
+  transition:.2s;
+}
+textarea.field{
+  min-height:130px;
+  resize:vertical;
+  line-height:1.55;
+}
+.field::placeholder{color:#68747b}
+.field:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(225,170,145,.10);
+}
+
+/* Consent */
+.consent{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  margin-top:16px;
+  color:#b9c0c4;
+  font-family:Inter,Arial,sans-serif;
+  font-size:13px;
+  line-height:1.5;
+}
+.consent input{
+  width:18px;
+  height:18px;
+  margin-top:1px;
+  accent-color:var(--accent);
+  flex:0 0 auto;
+}
+.consent a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* Radio cards */
+.options{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.option{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-height:58px;
+  padding:14px 16px;
+  border:1px solid #344149;
+  border-radius:16px;
+  background:var(--surface2);
+  cursor:pointer;
+  transition:.2s;
+}
+.option:hover{border-color:#56656d}
+.option input{
+  width:18px;
+  height:18px;
+  margin:0;
+  accent-color:var(--accent);
+  flex:0 0 auto;
+}
+.option:has(input:checked){
+  border-color:var(--accent);
+  background:rgba(225,170,145,.08);
+}
+
+.answer-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:50px;
+  margin-top:18px;
+  padding:0 20px;
+  border:1px solid var(--accent);
+  border-radius:14px;
+  background:var(--accent);
+  color:#171a1c;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+.answer-button:hover{transform:translateY(-2px)}
+.answer-button:active{transform:translateY(0)}
+
+/* Demo submit */
+.submit-area{
+  margin-top:22px;
+  padding:34px;
+  border:1px solid rgba(225,170,145,.42);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(225,170,145,.10),transparent 38%),
+    var(--surface);
+}
+.submit-area h2{
+  margin-bottom:12px;
+  font-size:clamp(28px,4vw,42px);
+  letter-spacing:-.04em;
+}
+.submit-area p{
+  max-width:650px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  margin-top:8px;
+  padding:0 22px;
+  border:1px solid var(--accent);
+  border-radius:14px;
+  background:var(--accent);
+  color:#171a1c;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+.button:hover{transform:translateY(-2px)}
+.gift-button{
+  background:#a95842 !important;
+  border-color:#c06c52 !important;
+  color:#fff7f2 !important;
+  box-shadow:none;
+}
+.gift-button:hover{
+  background:#a95842 !important;
+  border-color:#c06c52 !important;
+}
+.note{
+  margin:14px 0 0!important;
+  font-size:12px;
+  color:#6f7a80!important;
+}
+
+/* Footer */
+.footer{
+  padding:0 0 45px;
+  color:#68747b;
+  text-align:center;
+  font-size:12px;
+}
+
+/* Mobile */
+@media (max-width:640px){
+  .wrap{width:min(100% - 24px,920px)}
+  .top{
+    width:calc(100% - 20px);
+    height:56px;
+    top:10px;
+    margin-top:10px;
+    padding:0 15px;
+    border-radius:17px;
+  }
+  .brand{font-size:15px}
+  .top-label{font-size:11px}
+  .hero{padding:62px 0 28px}
+  h1{font-size:42px}
+  .lead{font-size:18px}
+  .gift{font-size:17px;padding:17px 18px}
+  .form{padding-top:10px;padding-bottom:60px}
+  .question{
+    margin:12px 0;
+    padding:21px 17px;
+    border-radius:22px;
+  }
+  .question h2{font-size:23px}
+  textarea.field{min-height:118px}
+  .option{
+    min-height:56px;
+    padding:13px 14px;
+  }
+  .submit-area{
+    padding:25px 19px;
+    border-radius:22px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header class="top">
+  <div class="brand">Мария Коренева</div>
+  <div class="top-label">Опрос для психологов</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Опрос для <span class="accent">психологов</span></h1>
+      <p class="lead">
+        Ответьте на 10 коротких вопросов о продвижении своей практики и получите подарок.
+      </p>
+      <div class="gift">
+        5 готовых промптов для психолога, которые можно использовать для продвижения уже сегодня
+      </div>
+      <p class="time">Это займет около 5 минут.</p>
+    </div>
+  </section>
+
+  <form class="form" onsubmit="return false;">
+    <div class="wrap">
+
+      <section class="question">
+        <div class="qnum">Вопрос 1 / 10</div>
+        <h2>Ваши фамилия, имя, отчество</h2>
+        <input class="field" type="text" name="fio" placeholder="Введите ФИО">
+        <label class="consent">
+          <input type="checkbox" name="consent">
+          <span>Даю согласие на <a href="#" onclick="return false;">обработку персональных данных</a></span>
+        </label>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 2 / 10</div>
+        <h2>Что в продвижении своих услуг дается вам сложнее всего?</h2>
+        <p class="hint">Расскажите своими словами. Можно привести конкретный пример.</p>
+        <textarea class="field" name="hardest" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 3 / 10</div>
+        <h2>Что отнимает у вас больше всего времени в продвижении своих услуг?</h2>
+        <p class="hint">Расскажите своими словами. Можно привести конкретный пример.</p>
+        <textarea class="field" name="time_consuming" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 4 / 10</div>
+        <h2>Что мешает вам начать или регулярно вести соцсети и продвигать свои услуги?</h2>
+        <p class="hint">С какими основными трудностями вы сталкиваетесь?</p>
+        <textarea class="field" name="social_barriers" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 5 / 10</div>
+        <h2>Помогают ли вам сейчас другие специалисты в продвижении? Если да, то кто и что они делают?</h2>
+        <p class="hint">Например: SMM-специалист, дизайнер, таргетолог, монтажер, копирайтер, технический специалист.</p>
+        <textarea class="field" name="specialists_now" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 6 / 10</div>
+        <h2>Какую часть работы по продвижению вы хотели бы передать другим специалистам, если бы была такая возможность?</h2>
+        <p class="hint">Что вы не хотите или не любите делать самостоятельно?</p>
+        <textarea class="field" name="delegate" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 7 / 10</div>
+        <h2>Используете ли вы сейчас искусственный интеллект в работе или для продвижения?</h2>
+
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="ai_use" value="no">
+            <span>Нет, вообще не использую</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="ai_use" value="tried">
+            <span>Пробовал(а) несколько раз</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="ai_use" value="sometimes">
+            <span>Иногда использую</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="ai_use" value="regular">
+            <span>Использую регулярно</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="ai_use" value="daily">
+            <span>Использую практически каждый день</span>
+          </label>
+        </div>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 8 / 10</div>
+        <h2>Что мешает вам начать использовать ИИ в работе или использовать его больше?</h2>
+        <p class="hint">Расскажите своими словами. Можно привести конкретный пример.</p>
+        <textarea class="field" name="ai_barriers" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 9 / 10</div>
+        <h2>Если бы ИИ мог прямо сейчас забрать у вас одну рабочую задачу, что бы вы ему поручили?</h2>
+        <p class="hint">Расскажите своими словами. Можно привести конкретный пример.</p>
+        <textarea class="field" name="ai_task" placeholder="Ваш ответ"></textarea>
+      <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="question">
+        <div class="qnum">Вопрос 10 / 10</div>
+        <h2>Что вам хотелось бы научиться делать с помощью ИИ?</h2>
+        <p class="hint">Напишите все, что приходит в голову, даже если сейчас вы не знаете, возможно ли это.</p>
+        <textarea class="field" name="ai_learn" placeholder="Ваш ответ"></textarea>
+        <button class="answer-button" type="button">Отправить ответ</button>
+      </section>
+
+      <section class="submit-area">
+        <h2>Спасибо за ваши ответы!</h2>
+        <p>
+          Мне важно узнать, с какими задачами и сложностями психологи сталкиваются в своей работе и продвижении.
+          Спасибо, что поделились своим опытом.
+        </p>
+        <p><strong>Ваш подарок уже готов.</strong></p>
+        <button class="button gift-button" type="button">Забрать подарок</button>
+      </section>
+
+    </div>
+  </form>
+</main>
+
+<footer class="footer">
+  <div class="wrap">Мария Коренева</div>
+</footer>
+</body>
+</html>

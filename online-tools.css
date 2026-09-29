@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;background:#090b10;color:#f5f2ee;line-height:1.6;min-height:100vh}
+.page{position:relative;overflow-x:hidden;min-height:100vh;padding:60px 24px 80px}
+.page::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:rgba(24,66,155,.18);filter:blur(120px);top:-330px;right:-200px;pointer-events:none}
+.container{position:relative;z-index:1;max-width:1280px;margin:0 auto}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:55px}
+.back{display:inline-flex;align-items:center;color:#c9ccd3;text-decoration:none;font-size:16px;transition:.25s}
+.back:hover{color:#E1AA91}
+.lang{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.lang button{min-width:36px;min-height:44px;padding:0;border:0;background:transparent;color:#879197;font:700 13px Manrope,sans-serif;cursor:pointer}
+.lang button[aria-pressed="true"]{color:#E1AA91}
+.lang span{color:#566168}
+.kicker{font-size:15px;letter-spacing:.18em;color:#E1AA91;font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(40px,5vw,66px);line-height:1.05;max-width:950px;font-weight:700;letter-spacing:-.035em}
+.intro{max-width:950px;margin-top:22px;color:#b9bdc6;font-size:19px}
+.project-card{margin-top:55px;border:1px solid #E1AA91;border-radius:22px;background:rgba(15,18,25,.72);padding:38px}
+.project-head{display:grid;grid-template-columns:70px 1fr;gap:22px;align-items:start;margin-bottom:34px}
+.number{font-size:15px;letter-spacing:.18em;color:#E1AA91;font-weight:700;padding-top:7px}
+h2{font-size:clamp(30px,3vw,42px);line-height:1.12;letter-spacing:-.025em;margin-bottom:12px}
+.description{color:#c7cad1;font-size:19px;max-width:900px}
+.project-body{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);gap:38px;align-items:center}
+.screenshot-wrap{width:100%;border:1px solid rgba(225,170,145,.45);border-radius:14px;padding:8px;background:#0d1016}
+.screenshot{display:block;width:100%;height:auto;border-radius:8px}
+.project-details{display:flex;flex-direction:column;justify-content:center;width:100%}
+.benefits-title{font-size:19px;font-weight:700;color:#f5f2ee;margin-bottom:15px}
+.benefits{display:grid;gap:13px}
+.benefit{display:flex;gap:11px;color:#c1c4cc;font-size:17px;line-height:1.5}
+.benefit::before{content:"•";color:#E1AA91;font-weight:700}
+.site-button{display:flex;width:100%;align-items:center;justify-content:center;min-height:52px;margin-top:28px;padding:0 25px;background:#E1AA91;color:#16171b;text-decoration:none;border-radius:10px;font-size:17px;font-weight:750;text-align:center;transition:transform .2s ease,filter .2s ease}
+.site-button:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.screenshots-vertical{display:grid;grid-template-columns:1fr;gap:22px}
+.screenshot-item{min-width:0}
+.screenshot-label{color:#9fa3ad;font-size:14px;margin-top:8px;text-align:center}
+.buttons-two{display:grid;gap:12px;margin-top:28px}
+.buttons-two .site-button{margin-top:0}
+.demo-access{margin-top:18px;padding:15px 17px;border:1px solid rgba(225,170,145,.25);border-radius:10px;color:#aeb2bb;font-size:14px;white-space:pre-line}
+.demo-access strong{color:#f5f2ee}
+.bottom-nav{margin-top:65px;padding-top:35px;border-top:1px solid rgba(255,255,255,.08)}
+@media(max-width:800px){
+  .page{padding:38px 18px 60px}
+  .topbar{align-items:flex-start;flex-direction:column;margin-bottom:45px}
+  .kicker{font-size:13px}
+  .intro{font-size:17px}
+  .project-card{margin-top:42px;padding:24px 18px}
+  .project-head{grid-template-columns:1fr;gap:8px;margin-bottom:26px}
+  .number{padding-top:0}
+  h2{font-size:31px}
+  .description{font-size:17px}
+  .project-body{grid-template-columns:1fr;gap:26px}
+  .screenshot-wrap{padding:6px}
+  .benefits-title{font-size:18px}
+  .benefit{font-size:16px}
+  .site-button{font-size:16px;min-height:50px;margin-top:24px}
+  .buttons-two{margin-top:24px}
+  .buttons-two .site-button{margin-top:0}
+  .bottom-nav{margin-top:50px}
+}
