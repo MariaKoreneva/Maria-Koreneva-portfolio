@@ -28,7 +28,7 @@
 <body>
   <div class="viewer">
     <header class="toolbar">
-      <a class="back" id="back-link" href="index.html#projects">← Вернуться к примерам решений</a>
+      <a class="back" id="back-link" href="index.html#projects">← Вернуться к проектам</a>
     </header>
     <div class="frame-wrap">
       <iframe id="demo-frame" title="Демо-проект" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
@@ -42,13 +42,13 @@
       const copy = {
         ru: {
           title: 'Демо-проект - Мария Коренева',
-          back: '← Вернуться к примерам решений',
+          back: '← Вернуться к проектам',
           frameTitle: 'Демо-проект',
           fallback: 'Не удалось загрузить демо в окне просмотра.'
         },
         en: {
           title: 'Demo project - Maria Koreneva',
-          back: '← Back to Solutions',
+          back: '← Back to Projects',
           frameTitle: 'Demo project',
           fallback: 'The demo could not be loaded in the viewer.'
         }
@@ -71,7 +71,16 @@
 
       function isSafeBackPath(path) {
         if (!path || path.includes('://') || path.startsWith('//')) return false;
-        return /^(websites|online-tools|bots)\.html(\?lang=en)?$/.test(path);
+        if (/^(websites|online-tools|bots)\.html(\?lang=en)?$/.test(path)) return true;
+        if (/^index\.html(\?lang=en)?(#projects-(websites|tools|ai|social))?$/.test(path)) return true;
+        if (!path.startsWith('index.html')) return false;
+        const queryPart = path.includes('?') ? path.slice(path.indexOf('?') + 1) : '';
+        const hashSplit = queryPart.split('#');
+        const params = new URLSearchParams(hashSplit[0]);
+        const hash = hashSplit[1] || '';
+        if (params.get('from') !== 'demo') return false;
+        if (params.has('lang') && params.get('lang') !== 'en') return false;
+        return /^projects-(websites|tools|ai|social)$/.test(hash);
       }
 
       const backLink = document.getElementById('back-link');
