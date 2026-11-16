@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <script>
+    (() => {
+      if (new URLSearchParams(location.search).get('from') === 'demo') return;
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    })();
+  </script>
   <title>Мария Коренева — портфолио</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>

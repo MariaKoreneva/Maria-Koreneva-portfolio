@@ -159,7 +159,7 @@
           title: 'Websites and Landing Pages',
           projects: [
             {
-              title: 'Neuromasterclass for Psychologists',
+              title: 'AI Workshop for Psychologists',
               desc: 'A project website about mastering neural networks and applying them in psychological practice.',
               demo: 'https://mariakoreneva.github.io/Neiromasterskaya/',
               demoLabel: 'View website'
@@ -184,7 +184,7 @@
               demoLabel: 'Open the game'
             },
             {
-              title: 'Psychologist Time Calculator',
+              title: 'Time Calculator for Psychologists',
               desc: 'An online calculator that helps psychologists see where their time goes. Can be used as a lead magnet.',
               demo: 'https://mariakoreneva.github.io/Psychological-calculator/',
               demoLabel: 'Open calculator'
@@ -232,7 +232,7 @@
               videoLabel: 'Watch demo'
             },
             {
-              title: 'Web Bot Manager',
+              title: 'Website Assistant Bot',
               desc: 'Introduces services, answers questions, and guides visitors through preset conversation flows to help them decide.',
               demo: 'https://mariakoreneva.github.io/Web-bot-manager/',
               demoLabel: 'Watch demo'
@@ -251,7 +251,7 @@
           projects: [
             {
               title: 'Psychology | Telegram',
-              desc: 'Full management of a psychologist’s author channel: content planning, expert and engaging posts, and visual design.',
+              desc: "End-to-end management of a psychologist's channel: content planning, expert and engaging posts, and visual design.",
               link: 'https://t.me/psychologykoreneva',
               linkLabel: 'View channel'
             },
@@ -286,7 +286,7 @@
       menu: 'Меню',
       heroRole: 'Промпт-инженер · Вайбкодер',
       heroDesc:
-        'Создаю сайты, онлайн-инструменты, ИИ-помощников. Разрабатываю контент и оформляю социальные сети.',
+        'Создаю сайты, онлайн-инструменты и ИИ-помощников, разрабатываю контент и оформляю социальные сети.',
       heroCta: 'Мои проекты',
       projectsKicker: 'МОИ ПРОЕКТЫ',
       projectsTitle: 'Примеры работ',
@@ -328,10 +328,10 @@
       menu: 'Menu',
       heroRole: 'Prompt Engineer · Vibe Coder',
       heroDesc:
-        'I create websites, online tools, and AI assistants. I develop content and design social media.',
+        'I build websites, online tools, and AI assistants, create content, and design social media profiles.',
       heroCta: 'My Projects',
       projectsKicker: 'MY PROJECTS',
-      projectsTitle: 'Work Examples',
+      projectsTitle: 'Selected Work',
       aboutKicker: 'ABOUT ME',
       aboutTitle: 'Maria Koreneva',
       aboutFormula: ['Psychology', 'Education', 'AI Tools'],
@@ -372,6 +372,18 @@
 
   let currentLang = 'ru';
   let openAccordionId = null;
+  let isFirstRender = true;
+
+  const isDemoReturnLoad = () => new URLSearchParams(location.search).get('from') === 'demo';
+
+  const prepareFreshPortfolioEntry = () => {
+    if (isDemoReturnLoad()) return;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    window.scrollTo(0, 0);
+  };
 
   const renderProject = (project, lang, categoryId) => {
     const shotSrc = project.shot[lang];
@@ -772,10 +784,14 @@
     if (scrollToProjectsFromDemo && openAccordionId) {
       const section = document.getElementById('projects');
       section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (isFirstRender) {
+      window.scrollTo(0, 0);
     }
+    isFirstRender = false;
     if (demoReturnPending) clearDemoReturnFromUrl();
   };
 
+  prepareFreshPortfolioEntry();
   const initialLang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'ru';
   render(initialLang);
 })();
