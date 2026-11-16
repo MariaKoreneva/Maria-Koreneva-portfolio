@@ -9,37 +9,6 @@
     email: 'mailto:Maria_koreneva@list.ru'
   };
 
-  const socialGroups = {
-    ru: [
-      {
-        title: 'Психология',
-        links: [{ label: 'Telegram', href: 'https://t.me/psychologykoreneva' }]
-      },
-      {
-        title: 'Нейросети для психологов',
-        links: [{ label: 'MAX', href: 'https://max.ru/channel_mariakoreneva_ai_psy' }]
-      },
-      {
-        title: 'Университетское сообщество',
-        links: [{ label: 'ВКонтакте', href: 'https://vk.ru/kafedra_istorii_rus_gtsolifk' }]
-      }
-    ],
-    en: [
-      {
-        title: 'Psychology',
-        links: [{ label: 'Telegram', href: 'https://t.me/psychologykoreneva' }]
-      },
-      {
-        title: 'AI for Psychologists',
-        links: [{ label: 'MAX', href: 'https://max.ru/channel_mariakoreneva_ai_psy' }]
-      },
-      {
-        title: 'University Community',
-        links: [{ label: 'VK', href: 'https://vk.ru/kafedra_istorii_rus_gtsolifk' }]
-      }
-    ]
-  };
-
   const certificateFiles = ['Certificate.jpg', 'Certificate-Vibecoding.jpg'];
 
   // Все будущие внешние проекты портфолио также должны открываться через demo-viewer.html
@@ -65,17 +34,17 @@
           title: 'Сайты и лендинги',
           projects: [
             {
-              title: 'Онлайн-резюме специалиста',
-              desc: 'Персональный сайт с опытом, навыками и образованием.',
-              note: 'Демонстрационный проект. Персональные данные и сведения о профессиональном опыте вымышлены.',
-              shot: { ru: 'DemoResume.jpg', en: 'DemoResumeENG.jpg' },
-              demo: 'https://mariakoreneva.github.io/Demo-resume/',
-              demoLabel: 'Посмотреть сайт →'
+              title: 'Нейромастерская для психологов',
+              desc: 'Сайт проекта об освоении нейросетей и их применении в работе психологов.',
+              demo: 'https://mariakoreneva.github.io/Neiromasterskaya/',
+              demoLabel: 'Посмотреть сайт'
             },
             {
-              title: 'SPORT UP — спортивная веб-платформа',
-              desc: 'Веб-платформа для поиска возможностей для занятий спортом в городах Ирана.',
-              shot: { ru: 'Sportup.jpg', en: 'Sportup.jpg' }
+              title: 'Персональный сайт-резюме',
+              desc: 'Двуязычный сайт для специалиста с презентацией профессионального опыта, навыков и образования.',
+              note: 'Демонстрационный проект. Персональные данные и сведения о профессиональном опыте вымышлены.',
+              demo: 'https://mariakoreneva.github.io/Demo-resume/',
+              demoLabel: 'Посмотреть сайт'
             }
           ]
         },
@@ -84,25 +53,34 @@
           title: 'Онлайн-инструменты',
           projects: [
             {
-              title: 'Интерактивная игра «Успей до 18»',
-              desc: 'Игра в игровом формате показывает, сколько времени можно сэкономить на рабочих задачах с помощью ИИ.',
-              shot: { ru: 'Uspeydo18.jpg', en: 'Uspeydo18.jpg' },
+              title: '«Успей до 18»',
+              desc: 'Интерактивная игра для психологов, посвященная нейросетям. Помогает вовлекать аудиторию и может использоваться как лид-магнит.',
               demo: 'https://mariakoreneva.github.io/igra-uspey-do-18/',
-              demoLabel: 'Попробовать игру →'
+              demoLabel: 'Открыть игру'
             },
             {
               title: 'Калькулятор времени психолога',
-              desc: 'Интерактивный калькулятор помогает увидеть, сколько времени уходит на рабочие задачи и что можно освободить с помощью ИИ.',
-              shot: { ru: 'Psy calculator.jpg', en: 'Psy calculator.jpg' },
+              desc: 'Онлайн-калькулятор, который помогает психологу увидеть, на что уходит его время. Может использоваться как лид-магнит.',
               demo: 'https://mariakoreneva.github.io/Psychological-calculator/',
-              demoLabel: 'Открыть калькулятор →'
+              demoLabel: 'Открыть калькулятор'
             },
             {
-              title: 'Интерактивная анкета для психологов',
-              desc: 'Онлайн-анкета для изучения профессиональных потребностей психологов.',
-              shot: { ru: 'PsychologySurvey.jpg', en: 'PsychologySurvey.jpg' },
+              title: 'Анкета для маркетинговых исследований',
+              desc: 'Изучение потребностей целевой аудитории, сбор заявок и интеграция в воронки привлечения клиентов с возможностью выдачи подарка за участие.',
               demo: 'https://mariakoreneva.github.io/opros-psy/site/',
-              demoLabel: 'Пройти анкету →'
+              demoLabel: 'Открыть анкету'
+            },
+            {
+              title: 'Анкета для психологических исследований',
+              desc: 'Сбор информации о психологическом состоянии, переживаниях и поведении участников исследования.',
+              demo: 'https://mariakoreneva.github.io/survey-research-platform/',
+              demoLabel: 'Открыть анкету'
+            },
+            {
+              title: 'Анкета для научных исследований',
+              desc: 'Сбор исследовательских данных с возможностью проведения опросов на трех языках для разных целевых аудиторий.',
+              demo: 'https://mariakoreneva.github.io/survey1-iran/',
+              demoLabel: 'Открыть анкету'
             }
           ]
         },
@@ -111,46 +89,66 @@
           title: 'ИИ-помощники и боты',
           projects: [
             {
-              title: 'Контент-планировщик',
-              desc: 'ИИ-помощник для составления плана публикаций с учетом заданных настроек.',
-              shot: { ru: 'Content-plan.jpg', en: 'Content-plan.jpg' },
+              title: 'ИИ-помощник для создания контент-плана',
+              desc: 'Уже настроен под специалиста: знает его целевую аудиторию, направление работы и задачи продвижения. Достаточно короткого запроса, чтобы получить готовый контент-план.',
               video: 'Content-plan.mp4',
-              videoLabel: '▶ Посмотреть, как работает помощник'
+              videoLabel: 'Смотреть демонстрацию'
             },
             {
-              title: 'Генератор идей',
-              desc: 'ИИ-помощник для подбора тем и идей под задачи специалиста.',
-              shot: { ru: 'Generatoridea.jpg', en: 'Generatoridea.jpg' },
+              title: 'ИИ-генератор идей для контента',
+              desc: 'Знает целевую аудиторию, тематику и стиль специалиста. По короткому запросу предлагает готовые идеи публикаций с учетом его задач.',
               video: 'Generatoridea.mp4',
-              videoLabel: '▶ Посмотреть, как работает помощник'
+              videoLabel: 'Смотреть демонстрацию'
             },
             {
-              title: 'Копирайтер постов',
-              desc: 'ИИ-помощник для подготовки текстов постов с учетом заданного контекста.',
-              shot: { ru: 'Copywriter.jpg', en: 'Copywriter.jpg' },
+              title: 'ИИ-копирайтер',
+              desc: 'Уже обучен писать в стиле специалиста и учитывать особенности его аудитории. Достаточно задать тему, чтобы получить готовый текст публикации.',
               video: 'Copywriter.mp4',
-              videoLabel: '▶ Посмотреть, как работает помощник'
+              videoLabel: 'Смотреть демонстрацию'
             },
             {
-              title: 'Веб-бот менеджер-консультант',
-              desc: 'Веб-бот знакомит с услугами и ведет пользователя по сценариям общения.',
-              shot: { ru: 'WebBot.jpg', en: 'WebBot.jpg' },
+              title: 'Веб-бот-менеджер',
+              desc: 'Знакомит посетителей с услугами, отвечает на вопросы и ведет по заранее настроенным сценариям общения, помогая принять решение.',
               demo: 'https://mariakoreneva.github.io/Web-bot-manager/',
-              demoLabel: 'Посмотреть бота →'
+              demoLabel: 'Смотреть демонстрацию'
             },
             {
               title: 'Интерактивный бот-тренажер',
-              desc: 'Интерактивный тренажер для обучения и оценки сотрудников на основе смоделированных рабочих ситуаций.',
-              shot: { ru: 'Manager trainer bot.jpg', en: 'Manager trainer bot.jpg' },
+              desc: 'Инструмент для обучения и оценки сотрудников на основе смоделированных рабочих ситуаций.',
               video: 'Manager trainer bot.MP4',
-              videoLabel: '▶ Посмотреть бота'
+              videoLabel: 'Смотреть демонстрацию'
             }
           ]
         },
         {
           id: 'social',
           title: 'Оформление и создание контента для социальных сетей',
-          social: true
+          projects: [
+            {
+              title: 'Психология | Telegram',
+              desc: 'Комплексное ведение авторского канала психолога: планирование контента, написание экспертных и вовлекающих публикаций, разработка визуального оформления.',
+              link: 'https://t.me/psychologykoreneva',
+              linkLabel: 'Посмотреть канал'
+            },
+            {
+              title: 'Нейросети для психологов | MAX',
+              desc: 'Создание и оформление тематического канала о нейросетях: от разработки контент-плана до написания обучающих публикаций и создания оригинальных визуалов.',
+              link: 'https://max.ru/channel_mariakoreneva_ai_psy',
+              linkLabel: 'Посмотреть канал'
+            },
+            {
+              title: 'Университетское сообщество | ВКонтакте',
+              desc: 'Информационное сопровождение сообщества: формирование контент-плана, подготовка и публикация материалов, создание визуального оформления.',
+              link: 'https://vk.ru/kafedra_istorii_rus_gtsolifk',
+              linkLabel: 'Посмотреть сообщество'
+            },
+            {
+              title: 'Видеоконтент психолога | Reels',
+              desc: 'Создание и оформление коротких видеороликов для социальных сетей: подбор музыкального сопровождения, подготовка и оформление текста, добавление визуальных эффектов.',
+              link: 'https://www.instagram.com/maria_koreneva/reels/',
+              linkLabel: 'Посмотреть видео'
+            }
+          ]
         }
       ]
     },
@@ -161,17 +159,17 @@
           title: 'Websites and Landing Pages',
           projects: [
             {
-              title: 'Online Resume',
-              desc: 'A personal website presenting professional experience, skills, and education.',
-              note: 'Demo project. All personal details and professional experience shown here are fictional.',
-              shot: { ru: 'DemoResume.jpg', en: 'DemoResumeENG.jpg' },
-              demo: 'https://mariakoreneva.github.io/Demo-resume/',
-              demoLabel: 'View website →'
+              title: 'Neuromasterclass for Psychologists',
+              desc: 'A project website about mastering neural networks and applying them in psychological practice.',
+              demo: 'https://mariakoreneva.github.io/Neiromasterskaya/',
+              demoLabel: 'View website'
             },
             {
-              title: 'SPORT UP - Sports Web Platform',
-              desc: 'A web platform for finding opportunities to participate in sports in cities across Iran.',
-              shot: { ru: 'Sportup.jpg', en: 'Sportup.jpg' }
+              title: 'Personal Resume Website',
+              desc: 'A bilingual website presenting professional experience, skills, and education.',
+              note: 'Demo project. All personal details and professional experience shown here are fictional.',
+              demo: 'https://mariakoreneva.github.io/Demo-resume/',
+              demoLabel: 'View website'
             }
           ]
         },
@@ -180,25 +178,34 @@
           title: 'Online Tools',
           projects: [
             {
-              title: 'Interactive Game "Make It Before 18"',
-              desc: 'A playful format that shows how much time can be saved on work tasks with AI.',
-              shot: { ru: 'Uspeydo18.jpg', en: 'Uspeydo18.jpg' },
+              title: '"Make It Before 18"',
+              desc: 'An interactive game for psychologists about neural networks. Engages audiences and works well as a lead magnet.',
               demo: 'https://mariakoreneva.github.io/igra-uspey-do-18/',
-              demoLabel: 'Try the game →'
+              demoLabel: 'Open the game'
             },
             {
-              title: 'Time Calculator for Psychologists',
-              desc: 'An interactive calculator that shows how much time goes into work tasks and what could be freed up with AI.',
-              shot: { ru: 'Psy calculator.jpg', en: 'Psy calculator.jpg' },
+              title: 'Psychologist Time Calculator',
+              desc: 'An online calculator that helps psychologists see where their time goes. Can be used as a lead magnet.',
               demo: 'https://mariakoreneva.github.io/Psychological-calculator/',
-              demoLabel: 'Open calculator →'
+              demoLabel: 'Open calculator'
             },
             {
-              title: 'Interactive Survey for Psychologists',
-              desc: 'An online survey for exploring professional needs of psychologists.',
-              shot: { ru: 'PsychologySurvey.jpg', en: 'PsychologySurvey.jpg' },
+              title: 'Marketing Research Survey',
+              desc: 'Explores target audience needs, collects leads, and fits into client acquisition funnels with optional rewards for participation.',
               demo: 'https://mariakoreneva.github.io/opros-psy/site/',
-              demoLabel: 'Take the survey →'
+              demoLabel: 'Open survey'
+            },
+            {
+              title: 'Psychological Research Survey',
+              desc: 'Collects information on participants’ mental state, experiences, and behavior for research purposes.',
+              demo: 'https://mariakoreneva.github.io/survey-research-platform/',
+              demoLabel: 'Open survey'
+            },
+            {
+              title: 'Academic Research Survey',
+              desc: 'Gathers research data with multilingual surveys for different target audiences.',
+              demo: 'https://mariakoreneva.github.io/survey1-iran/',
+              demoLabel: 'Open survey'
             }
           ]
         },
@@ -207,46 +214,66 @@
           title: 'AI Assistants and Bots',
           projects: [
             {
-              title: 'Content Planner',
-              desc: 'An AI assistant for building a publication plan based on your settings.',
-              shot: { ru: 'Content-plan.jpg', en: 'Content-plan.jpg' },
+              title: 'AI Content Plan Assistant',
+              desc: 'Preconfigured for the specialist: knows their audience, field, and promotion goals. A short prompt is enough to get a ready content plan.',
               video: 'Content-plan.mp4',
-              videoLabel: '▶ See how the assistant works'
+              videoLabel: 'Watch demo'
             },
             {
-              title: 'Idea Generator',
-              desc: 'An AI assistant for finding topics and ideas for a specialist\'s tasks.',
-              shot: { ru: 'Generatoridea.jpg', en: 'Generatoridea.jpg' },
+              title: 'AI Content Idea Generator',
+              desc: 'Knows the audience, topics, and tone of the specialist. A short prompt produces ready post ideas aligned with their goals.',
               video: 'Generatoridea.mp4',
-              videoLabel: '▶ See how the assistant works'
+              videoLabel: 'Watch demo'
             },
             {
-              title: 'Post Copywriter',
-              desc: 'An AI assistant for preparing post copy using the context you provide.',
-              shot: { ru: 'Copywriter.jpg', en: 'Copywriter.jpg' },
+              title: 'AI Copywriter',
+              desc: 'Trained to write in the specialist’s voice and account for their audience. Set a topic and get ready-to-use post copy.',
               video: 'Copywriter.mp4',
-              videoLabel: '▶ See how the assistant works'
+              videoLabel: 'Watch demo'
             },
             {
-              title: 'Web Bot Manager and Consultant',
-              desc: 'A web bot that introduces services and guides users through conversation scenarios.',
-              shot: { ru: 'WebBot.jpg', en: 'WebBot.jpg' },
+              title: 'Web Bot Manager',
+              desc: 'Introduces services, answers questions, and guides visitors through preset conversation flows to help them decide.',
               demo: 'https://mariakoreneva.github.io/Web-bot-manager/',
-              demoLabel: 'View the bot →'
+              demoLabel: 'Watch demo'
             },
             {
               title: 'Interactive Training Bot',
-              desc: 'An interactive bot for training and evaluating employees through simulated workplace situations.',
-              shot: { ru: 'Manager trainer bot.jpg', en: 'Manager trainer bot.jpg' },
+              desc: 'A tool for training and evaluating employees through simulated workplace scenarios.',
               video: 'Manager trainer bot.MP4',
-              videoLabel: '▶ View the Bot'
+              videoLabel: 'Watch demo'
             }
           ]
         },
         {
           id: 'social',
           title: 'Social Media Design and Content Creation',
-          social: true
+          projects: [
+            {
+              title: 'Psychology | Telegram',
+              desc: 'Full management of a psychologist’s author channel: content planning, expert and engaging posts, and visual design.',
+              link: 'https://t.me/psychologykoreneva',
+              linkLabel: 'View channel'
+            },
+            {
+              title: 'AI for Psychologists | MAX',
+              desc: 'Creating and designing a themed channel about neural networks: from content planning to educational posts and original visuals.',
+              link: 'https://max.ru/channel_mariakoreneva_ai_psy',
+              linkLabel: 'View channel'
+            },
+            {
+              title: 'University Community | VK',
+              desc: 'Community information support: content planning, preparing and publishing materials, and visual design.',
+              link: 'https://vk.ru/kafedra_istorii_rus_gtsolifk',
+              linkLabel: 'View community'
+            },
+            {
+              title: "Psychologist's Video Content | Reels",
+              desc: 'Creation and editing of short videos for social media, including music selection, text preparation and styling, and visual effects.',
+              link: 'https://www.instagram.com/maria_koreneva/reels/',
+              linkLabel: 'Watch Videos'
+            }
+          ]
         }
       ]
     }
@@ -265,7 +292,7 @@
       projectsTitle: 'Примеры работ',
       aboutKicker: 'ОБО МНЕ',
       aboutTitle: 'Мария Коренева',
-      aboutFormula: ['Психология', 'Образование и наука', 'Нейросети'],
+      aboutFormula: ['Психология', 'Образование', 'Нейросети'],
       aboutPillars: [
         {
           title: 'ПСИХОЛОГИЯ',
@@ -290,6 +317,7 @@
       self: 'Индивидуальный предприниматель',
       contactsLabels: { telegram: 'Telegram', max: 'MAX', whatsapp: 'WhatsApp', email: 'Email' },
       close: '× Закрыть',
+      videoBack: '← Вернуться к проектам',
       videoModalLabel: 'Демонстрация работы',
       pageTitle: 'Мария Коренева - портфолио',
       zoomShot: 'Увеличить скриншот'
@@ -306,7 +334,7 @@
       projectsTitle: 'Work Examples',
       aboutKicker: 'ABOUT ME',
       aboutTitle: 'Maria Koreneva',
-      aboutFormula: ['Psychology', 'Education & Research', 'AI Tools'],
+      aboutFormula: ['Psychology', 'Education', 'AI Tools'],
       aboutPillars: [
         {
           title: 'PSYCHOLOGY',
@@ -332,6 +360,7 @@
       self: 'Individual Entrepreneur',
       contactsLabels: { telegram: 'Telegram', max: 'MAX', whatsapp: 'WhatsApp', email: 'Email' },
       close: '× Close',
+      videoBack: '← Back to Projects',
       videoModalLabel: 'Demonstration',
       pageTitle: 'Maria Koreneva - Portfolio',
       zoomShot: 'Enlarge screenshot'
@@ -373,9 +402,34 @@
       </article>`;
   };
 
-  const renderAboutFormula = (parts) => {
-    const [first, second, third] = parts;
-    return `<span class="mk-about-formula-line mk-about-formula-line--1"><span>${first}</span><span class="mk-about-plus" aria-hidden="true">+</span><span>${second}</span></span><span class="mk-about-formula-line mk-about-formula-line--2"><span class="mk-about-formula-tail"><span class="mk-about-plus" aria-hidden="true">+</span><span>${third}</span></span></span>`;
+  const renderAboutFormula = (parts) =>
+    parts
+      .map(
+        (part, index) =>
+          `${index ? '<span class="mk-about-plus" aria-hidden="true">+</span>' : ''}<span>${part}</span>`
+      )
+      .join(' ');
+
+  const renderCompactProjectCard = (project, lang, categoryId) => {
+    let action = '';
+    if (project.demo) {
+      action = `<a class="mk-button mk-button-primary mk-project-cta" href="${demoViewerHref(
+        project.demo,
+        lang,
+        categoryId
+      )}">${project.demoLabel}</a>`;
+    } else if (project.video) {
+      action = `<button type="button" class="mk-button mk-button-primary mk-project-cta" data-video="${project.video}">${project.videoLabel}</button>`;
+    } else if (project.link) {
+      action = `<a class="mk-button mk-button-primary mk-project-cta" href="${project.link}" target="_blank" rel="noopener noreferrer">${project.linkLabel}</a>`;
+    }
+    return `
+      <article class="mk-website-card">
+        <h3 class="mk-website-card-title">${project.title}</h3>
+        <p class="mk-website-card-desc">${project.desc}</p>
+        ${project.note ? `<p class="mk-project-note">${project.note}</p>` : ''}
+        ${action ? `<div class="mk-project-actions">${action}</div>` : ''}
+      </article>`;
   };
 
   const renderAboutPillars = (pillars) =>
@@ -392,8 +446,10 @@
   const renderCategoryPanelContent = (catId, lang) => {
     const cat = projectCatalog[lang].categories.find((c) => c.id === catId);
     if (!cat) return '';
-    if (cat.social) {
-      return `<div class="mk-social-grid mk-social-grid--accordion">${renderSocial(lang)}</div>`;
+    if (catId === 'websites' || catId === 'tools' || catId === 'ai' || catId === 'social') {
+      return `<div class="mk-website-cards">${cat.projects
+        .map((p) => renderCompactProjectCard(p, lang, cat.id))
+        .join('')}</div>`;
     }
     return cat.projects.map((p) => renderProject(p, lang, cat.id)).join('');
   };
@@ -447,24 +503,6 @@
       )
       .join('');
   };
-
-  const renderSocial = (lang) =>
-    socialGroups[lang]
-      .map(
-        (group) => `
-      <article class="mk-social-card">
-        <h3 class="mk-social-card-title">${group.title}</h3>
-        <div class="mk-social-actions">
-          ${group.links
-            .map(
-              (link) =>
-                `<a class="mk-button mk-button-primary mk-social-cta" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}<span class="mk-btn-arrow" aria-hidden="true">→</span></a>`
-            )
-            .join('')}
-        </div>
-      </article>`
-      )
-      .join('');
 
   const renderCertificates = (lang) =>
     certificateFiles
@@ -672,9 +710,13 @@
         <div class="mk-footer-legal">${t.footerLegal}</div>
       </div></footer>
       <div class="mk-video-modal" data-video-modal hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="${t.videoModalLabel}">
-        <div class="mk-video-modal-inner">
-          <button type="button" class="mk-video-close" data-video-close>${t.close}</button>
-          <video class="mk-demo-video" preload="metadata" playsinline data-demo-video></video>
+        <div class="mk-video-viewer">
+          <header class="mk-video-toolbar">
+            <button type="button" class="mk-video-back" data-video-close>${t.videoBack}</button>
+          </header>
+          <div class="mk-video-stage">
+            <video class="mk-demo-video" controls preload="metadata" playsinline data-demo-video></video>
+          </div>
         </div>
       </div>
       <dialog class="mk-dialog mk-shot-lightbox">
