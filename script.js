@@ -373,13 +373,10 @@
       </article>`;
   };
 
-  const renderAboutFormula = (parts) =>
-    parts
-      .map(
-        (part, index) =>
-          `${index ? '<span class="mk-about-plus" aria-hidden="true">+</span>' : ''}<span>${part}</span>`
-      )
-      .join(' ');
+  const renderAboutFormula = (parts) => {
+    const [first, second, third] = parts;
+    return `<span class="mk-about-formula-line mk-about-formula-line--1"><span>${first}</span><span class="mk-about-plus" aria-hidden="true">+</span><span>${second}</span></span><span class="mk-about-formula-line mk-about-formula-line--2"><span class="mk-about-formula-tail"><span class="mk-about-plus" aria-hidden="true">+</span><span>${third}</span></span></span>`;
+  };
 
   const renderAboutPillars = (pillars) =>
     pillars
