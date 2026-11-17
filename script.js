@@ -79,7 +79,7 @@
             {
               title: 'Анкета для научных исследований',
               desc: 'Сбор исследовательских данных с возможностью проведения опросов на трех языках для разных целевых аудиторий.',
-              demo: 'https://mariakoreneva.github.io/survey1-iran/',
+              demo: 'https://mariakoreneva.github.io/survey1-iran/?lang=ru',
               demoLabel: 'Открыть анкету'
             }
           ]
@@ -204,7 +204,7 @@
             {
               title: 'Academic Research Survey',
               desc: 'Gathers research data with multilingual surveys for different target audiences.',
-              demo: 'https://mariakoreneva.github.io/survey1-iran/',
+              demo: 'https://mariakoreneva.github.io/survey1-iran/?lang=en',
               demoLabel: 'Open survey'
             }
           ]
